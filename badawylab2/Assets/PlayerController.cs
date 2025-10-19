@@ -14,11 +14,11 @@ public class PlayerController : MonoBehaviour
     public float groundCheckRadius;    // value to determine how big the circle around the player's feet is
     public LayerMask whatIsGround;     // this variable stores what is considered a ground to the character
     private bool grounded;             // check if the character is standing on solid ground
-
+    private Animator anim; 
     // Use this for initialization
     void Start()
     {
-
+     anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -50,6 +50,10 @@ public class PlayerController : MonoBehaviour
                 GetComponent<SpriteRenderer>().flipX = false;
             }
         }
+        anim.SetFloat("Height", GetComponent<Rigidbody2D>().velocity.y);
+        anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+        anim.SetBool("Grounded", grounded); 
+
     }
 
     void FixedUpdate()
