@@ -47,9 +47,15 @@ TagManager:
   - name: clouds
     uniqueID: 118473083
     locked: 0
+  - name: water
+    uniqueID: 1711345695
+    locked: 0
   - name: charachter
     uniqueID: 1308471003
     locked: 0
   - name: ground
     uniqueID: 4055169157
+    locked: 0
+  - name: floaty
+    uniqueID: 2598140391
     locked: 0
